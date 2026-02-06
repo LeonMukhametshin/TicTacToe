@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "com.leopotam.ecs": {
-      "version": "https://github.com/Leopotam/ecs.git",
+      "version": "https://github.com/LeoECSCommunity/ecs.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "b256e570bdb15a0bea9e664af32953068a2ac1e5"
+      "hash": "91cc7e390fa0eb4fc88a5cf111df88b1f45af37e"
     },
     "com.leopotam.ecs-unityintegration": {
       "version": "https://github.com/Leopotam/ecs-unityintegration.git",

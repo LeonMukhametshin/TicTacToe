@@ -1,45 +1,57 @@
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Client {
-    sealed class EcsStartup : MonoBehaviour {
-        EcsWorld _world;
-        EcsSystems _systems;
+namespace TicToe {
+    sealed class EcsStartup : MonoBehaviour 
+    {
+        private EcsWorld m_world;
+        private EcsSystems m_systems;
 
-        void Start () {
-            // void can be switched to IEnumerator for support coroutines.
-            
-            _world = new EcsWorld ();
-            _systems = new EcsSystems (_world);
+        public Configuration configuration;
+        public SceneData sceneData;
+
+        private void Start() 
+        {
+            m_world = new EcsWorld();
+            m_systems = new EcsSystems(m_world);
 #if UNITY_EDITOR
-            Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create (_world);
-            Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create (_systems);
+            Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(m_world);
+            Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(m_systems);
 #endif
-            _systems
-                // register your systems here, for example:
-                // .Add (new TestSystem1 ())
-                // .Add (new TestSystem2 ())
-                
-                // register one-frame components (order is important), for example:
-                // .OneFrame<TestComponent1> ()
-                // .OneFrame<TestComponent2> ()
-                
-                // inject service instances here (order doesn't important), for example:
-                // .Inject (new CameraService ())
-                // .Inject (new NavMeshSupport ())
+            var gameState = new GameState();
+
+            m_systems
+
+                .Add(new InitializeFieldSystems())
+                .Add(new CreateCellViewSystem())
+                .Add(new SetCameraSystem())
+                .Add(new ControlSystem())
+                .Add(new AnalyzeClickedSystem())
+                .Add(new CreateTakenViewSystem())
+
+                .OneFrame<UpdateCameraEvent>()
+                .OneFrame<Clicked>()
+
+                .Inject(configuration)
+                .Inject(sceneData)
+                .Inject(gameState)
+
                 .Init ();
         }
 
-        void Update () {
-            _systems?.Run ();
+        private void Update() 
+        {
+            m_systems?.Run ();
         }
 
-        void OnDestroy () {
-            if (_systems != null) {
-                _systems.Destroy ();
-                _systems = null;
-                _world.Destroy ();
-                _world = null;
+        private void OnDestroy() 
+        {
+            if (m_systems != null) 
+            {
+                m_systems.Destroy();
+                m_systems = null;
+                m_world.Destroy();
+                m_world = null;
             }
         }
     }
