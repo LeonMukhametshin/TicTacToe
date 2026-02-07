@@ -28,9 +28,11 @@ namespace TicToe {
                 .Add(new ControlSystem())
                 .Add(new AnalyzeClickedSystem())
                 .Add(new CreateTakenViewSystem())
+                .Add(new CheckWinSystem())
 
                 .OneFrame<UpdateCameraEvent>()
                 .OneFrame<Clicked>()
+                .OneFrame<CheckWinEvent>()
 
                 .Inject(configuration)
                 .Inject(sceneData)

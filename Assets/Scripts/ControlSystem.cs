@@ -1,9 +1,8 @@
 using Leopotam.Ecs;
-using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 
 namespace TicToe {
-    internal class ControlSystem : IEcsRunSystem
+    public class ControlSystem : IEcsRunSystem
     {
         private SceneData m_sceneData;
 

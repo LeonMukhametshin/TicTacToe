@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TicToe
 {
-    internal class CreateCellViewSystem : IEcsRunSystem
+    public class CreateCellViewSystem : IEcsRunSystem
     {
         private EcsFilter<Cell, Position>.Exclude<CellViewRef> m_filter;
         private Configuration m_configuration;

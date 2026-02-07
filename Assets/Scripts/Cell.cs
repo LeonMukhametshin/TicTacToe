@@ -1,5 +1,5 @@
 namespace TicToe {
-    internal struct Cell
+    public struct Cell
     {
     }
 }

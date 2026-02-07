@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TicToe
 {
-    internal class SetCameraSystem : IEcsRunSystem
+    public class SetCameraSystem : IEcsRunSystem
     {
         private EcsFilter<UpdateCameraEvent> m_filter;
         private SceneData m_sceneData;

@@ -1,12 +1,12 @@
 using Leopotam.Ecs;
-using TMPro;
 using UnityEngine;
 
 namespace TicToe {
-    internal class InitializeFieldSystems : IEcsInitSystem
+    public class InitializeFieldSystems : IEcsInitSystem
     {
         private Configuration m_configuration;
         private EcsWorld m_world;
+        private GameState m_gameState;
 
         public void Init()
         {
@@ -16,7 +16,10 @@ namespace TicToe {
                 {
                     var cellEntity = m_world.NewEntity();
                     cellEntity.Get<Cell>();
-                    cellEntity.Get<Position>().value = new Vector2Int(x,y);
+                    var position = new Vector2Int(x, y);
+                    cellEntity.Get<Position>().value = position;
+
+                    m_gameState.cells[position] = cellEntity;
                 }
             }
 
