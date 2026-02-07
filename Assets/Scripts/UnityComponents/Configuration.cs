@@ -1,6 +1,7 @@
 using UnityEngine;
 
-namespace TicToe {
+namespace TicToe.UnityComponents
+{
     [CreateAssetMenu]
     public class Configuration : ScriptableObject
     {

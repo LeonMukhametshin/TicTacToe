@@ -1,6 +1,8 @@
 ﻿using Leopotam.Ecs;
+using TicToe.Components;
+using TicToe.UnityComponents;
 
-namespace TicToe
+namespace TicToe.Systems
 {
     public class WinSystem : IEcsRunSystem
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine.SceneManagement;
 
-namespace TicToe
+namespace TicToe.UnityComponents
 {
     public class LoseScreen : Screen
     {

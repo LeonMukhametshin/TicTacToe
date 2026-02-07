@@ -1,5 +1,4 @@
-namespace TicToe {
-    public struct Cell
-    {
-    }
+namespace TicToe.Components
+{
+    public struct Cell { }
 }

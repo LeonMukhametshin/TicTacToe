@@ -1,6 +1,7 @@
 using UnityEngine;
 
-namespace TicToe {
+namespace TicToe.Components
+{
     public struct Position
     {
         public Vector2Int value;

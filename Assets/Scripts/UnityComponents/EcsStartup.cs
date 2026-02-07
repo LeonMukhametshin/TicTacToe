@@ -1,7 +1,11 @@
 using Leopotam.Ecs;
+using TicToe.Components;
+using TicToe.Services;
+using TicToe.Systems;
 using UnityEngine;
 
-namespace TicToe {
+namespace TicToe.UnityComponents
+{
     sealed class EcsStartup : MonoBehaviour 
     {
         private EcsWorld m_world;

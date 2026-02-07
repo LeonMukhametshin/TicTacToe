@@ -1,7 +1,12 @@
-using Leopotam.Ecs;
 using UnityEngine;
+using Leopotam.Ecs;
+using TicToe.Services;
+using TicToe.Components;
+using TicToe.UnityComponents;
 
-namespace TicToe {
+
+namespace TicToe.Systems
+{ 
     public class InitializeFieldSystems : IEcsInitSystem
     {
         private Configuration m_configuration;

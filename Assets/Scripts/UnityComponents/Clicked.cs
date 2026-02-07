@@ -1,6 +1,4 @@
-﻿namespace TicToe
+﻿namespace TicToe.UnityComponents
 {
-    public struct Clicked
-    {
-    }
+    public struct Clicked { }
 }

@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TicToe
+namespace TicToe.UnityComponents
 {
-    public class SignView : MonoBehaviour
-    {
-    }
+    public class SignView : MonoBehaviour { }
 }

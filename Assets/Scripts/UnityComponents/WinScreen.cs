@@ -1,8 +1,9 @@
 ﻿using System;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TicToe.Components;
+using UnityEngine.SceneManagement;
 
-namespace TicToe
+namespace TicToe.UnityComponents
 {
     public class WinScreen : Screen
     {

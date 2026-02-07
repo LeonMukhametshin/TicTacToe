@@ -1,8 +1,9 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TicToe.Components;
 
-namespace TicToe
+namespace TicToe.UnityComponents
 {
     public class GameHUD : MonoBehaviour
     {

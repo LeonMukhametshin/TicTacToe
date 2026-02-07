@@ -1,8 +1,9 @@
+using UnityEngine;
 using Leopotam.Ecs;
 using NUnit.Framework;
+using TicToe.Services;
+using TicToe.Components;
 using System.Collections.Generic;
-using TicToe;
-using UnityEngine;
 
 namespace Tests
 {

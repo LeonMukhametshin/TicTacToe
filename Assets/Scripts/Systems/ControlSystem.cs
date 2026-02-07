@@ -1,7 +1,9 @@
-using Leopotam.Ecs;
 using UnityEngine;
+using Leopotam.Ecs;
+using TicToe.UnityComponents;
 
-namespace TicToe {
+namespace TicToe.Systems
+{ 
     public class ControlSystem : IEcsRunSystem
     {
         private SceneData m_sceneData;

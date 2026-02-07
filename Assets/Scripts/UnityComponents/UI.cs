@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TicToe
+namespace TicToe.UnityComponents
 {
     public class UI : MonoBehaviour
     {

@@ -1,8 +1,10 @@
-﻿using Leopotam.Ecs;
-using System;
+﻿using System;
 using UnityEngine;
+using Leopotam.Ecs;
+using TicToe.Components;
+using TicToe.UnityComponents;
 
-namespace TicToe
+namespace TicToe.Systems
 {
     public class CreateTakenViewSystem : IEcsRunSystem
     {

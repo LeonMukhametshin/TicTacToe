@@ -1,6 +1,9 @@
 ﻿using Leopotam.Ecs;
+using TicToe.Services;
+using TicToe.Components;
+using TicToe.UnityComponents;
 
-namespace TicToe
+namespace TicToe.Systems
 {
     public class CheckWinSystem : IEcsRunSystem
     {

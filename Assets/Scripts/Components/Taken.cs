@@ -1,4 +1,4 @@
-﻿namespace TicToe
+﻿namespace TicToe.Components
 {
     public struct Taken
     {

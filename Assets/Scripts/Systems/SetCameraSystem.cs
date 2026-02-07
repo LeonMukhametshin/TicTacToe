@@ -1,7 +1,9 @@
-﻿using Leopotam.Ecs;
-using UnityEngine;
+﻿using UnityEngine;
+using Leopotam.Ecs;
+using TicToe.Components;
+using TicToe.UnityComponents;
 
-namespace TicToe
+namespace TicToe.Systems
 {
     public class SetCameraSystem : IEcsRunSystem
     {

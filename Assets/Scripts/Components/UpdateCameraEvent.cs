@@ -1,6 +1,4 @@
-﻿namespace TicToe
+﻿namespace TicToe.Components
 {
-    public struct UpdateCameraEvent
-    {
-    }
+    public struct UpdateCameraEvent { }
 }

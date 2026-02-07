@@ -1,4 +1,4 @@
-﻿namespace TicToe
+﻿namespace TicToe.Components
 {
     public enum SignType
     {

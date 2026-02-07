@@ -1,4 +1,6 @@
-﻿namespace TicToe
+﻿using TicToe.UnityComponents;
+
+namespace TicToe.Components
 {
     public struct CellViewRef
     {

@@ -1,8 +1,9 @@
-﻿using Leopotam.Ecs;
+﻿using UnityEngine;
+using Leopotam.Ecs;
+using TicToe.Components;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace TicToe
+namespace TicToe.Services
 {
     public static class GameExtentions
     {
@@ -24,8 +25,12 @@ namespace TicToe
             return Mathf.Max(verticalLength, horizontalLength, diagonalOne, diagonalOther);
         }
 
-        private static int Count(Dictionary<Vector2Int, EcsEntity> cells, Vector2Int position, Vector2Int direction, SignType startType,
-          int diagonalOne, Vector2Int direction2)
+        private static int Count(Dictionary<Vector2Int, EcsEntity> cells, 
+            Vector2Int position, 
+            Vector2Int direction, 
+            SignType startType,
+            int diagonalOne, 
+            Vector2Int direction2)
         {
             var currentPosition = position + direction;
 

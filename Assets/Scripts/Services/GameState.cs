@@ -1,8 +1,9 @@
-﻿using Leopotam.Ecs;
+﻿using UnityEngine;
+using Leopotam.Ecs;
+using TicToe.Components;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace TicToe
+namespace TicToe.Services
 {
     public class GameState
     {
