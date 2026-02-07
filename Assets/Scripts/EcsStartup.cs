@@ -19,6 +19,7 @@ namespace TicToe {
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(m_systems);
 #endif
             var gameState = new GameState();
+            sceneData.ui.gameHUD.SetTurn(gameState.currentType);
 
             m_systems
 

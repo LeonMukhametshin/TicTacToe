@@ -27,7 +27,7 @@ namespace Tests
                 {new Vector2Int(2, 2), CreateCell(world, new Vector2Int(2,2))}
             };
 
-            var chainLenght = GameExtentions.GameLongestChain(cells, Vector2Int.zero);
+            var chainLenght = GameExtentions.GetLongestChain(cells, Vector2Int.zero);
 
             Assert.AreEqual(0, chainLenght);
         }
@@ -52,7 +52,7 @@ namespace Tests
 
             cells[Vector2Int.zero].Get<Taken>().value = SignType.Cross;
 
-            var chainLenght = cells.GameLongestChain(Vector2Int.zero);
+            var chainLenght = cells.GetLongestChain(Vector2Int.zero);
 
             Assert.AreEqual(1, chainLenght);
         }
@@ -78,7 +78,7 @@ namespace Tests
             cells[new Vector2Int(2, 0)].Get<Taken>().value = SignType.Cross;
             cells[new Vector2Int(1, 0)].Get<Taken>().value = SignType.Cross;
 
-            var chainLenght = cells.GameLongestChain(new Vector2Int(2,0));
+            var chainLenght = cells.GetLongestChain(new Vector2Int(2,0));
 
             Assert.AreEqual(2, chainLenght);
         }
@@ -104,7 +104,7 @@ namespace Tests
             cells[new Vector2Int(2, 0)].Get<Taken>().value = SignType.Cross;
             cells[new Vector2Int(1, 0)].Get<Taken>().value = SignType.Cross;
 
-            var chainLenght = cells.GameLongestChain(new Vector2Int(1, 0));
+            var chainLenght = cells.GetLongestChain(new Vector2Int(1, 0));
 
             Assert.AreEqual(2, chainLenght);
         }
@@ -130,7 +130,7 @@ namespace Tests
             cells[new Vector2Int(0, 1)].Get<Taken>().value = SignType.Cross;
             cells[new Vector2Int(0, 2)].Get<Taken>().value = SignType.Cross;
 
-            var chainLenght = cells.GameLongestChain(new Vector2Int(0, 1));
+            var chainLenght = cells.GetLongestChain(new Vector2Int(0, 1));
 
             Assert.AreEqual(2, chainLenght);
         }
@@ -157,7 +157,7 @@ namespace Tests
             cells[new Vector2Int(0, 1)].Get<Taken>().value = SignType.Cross;
             cells[new Vector2Int(0, 2)].Get<Taken>().value = SignType.Cross;
 
-            var chainLenght = cells.GameLongestChain(new Vector2Int(0, 0));
+            var chainLenght = cells.GetLongestChain(new Vector2Int(0, 0));
 
             Assert.AreEqual(3, chainLenght);
         }
@@ -184,7 +184,7 @@ namespace Tests
             cells[new Vector2Int(0, 1)].Get<Taken>().value = SignType.Cross;
             cells[new Vector2Int(0, 2)].Get<Taken>().value = SignType.Cross;
 
-            var chainLenght = cells.GameLongestChain(new Vector2Int(0, 0));
+            var chainLenght = cells.GetLongestChain(new Vector2Int(0, 0));
 
             Assert.AreEqual(3, chainLenght);
         }
@@ -194,26 +194,26 @@ namespace Tests
         {
             var world = new EcsWorld();
 
-            Dictionary<Vector2Int, EcsEntity> cells = new()
+            Dictionary<Vector2Int, EcsEntity> cells = new Dictionary<Vector2Int, EcsEntity>()
             {
-                {new Vector2Int(0, 0), CreateCell(world, new Vector2Int(0,0))},
-                {new Vector2Int(0, 1), CreateCell(world, new Vector2Int(0,1))},
-                {new Vector2Int(0, 2), CreateCell(world, new Vector2Int(0,2))},
-                {new Vector2Int(1, 0), CreateCell(world, new Vector2Int(1,0))},
-                {new Vector2Int(1, 1), CreateCell(world, new Vector2Int(1,1))},
-                {new Vector2Int(1, 2), CreateCell(world, new Vector2Int(1,2))},
-                {new Vector2Int(2, 0), CreateCell(world, new Vector2Int(2,0))},
-                {new Vector2Int(2, 1), CreateCell(world, new Vector2Int(2,1))},
-                {new Vector2Int(2, 2), CreateCell(world, new Vector2Int(2,2))}
+                {new Vector2Int(0, 0), CreateCell(world,new Vector2Int(0,0))},
+                {new Vector2Int(0, 1), CreateCell(world,new Vector2Int(0,1))},
+                {new Vector2Int(0, 2), CreateCell(world,new Vector2Int(0,2))},
+                {new Vector2Int(1, 0), CreateCell(world,new Vector2Int(1,0))},
+                {new Vector2Int(1, 1), CreateCell(world,new Vector2Int(1,1))},
+                {new Vector2Int(1, 2), CreateCell(world,new Vector2Int(1,2))},
+                {new Vector2Int(2, 0), CreateCell(world,new Vector2Int(2,0))},
+                {new Vector2Int(2, 1), CreateCell(world,new Vector2Int(2,1))},
+                {new Vector2Int(2, 2), CreateCell(world,new Vector2Int(2,2))},
             };
 
             cells[new Vector2Int(0, 2)].Get<Taken>().value = SignType.Cross;
             cells[new Vector2Int(1, 1)].Get<Taken>().value = SignType.Cross;
             cells[new Vector2Int(2, 0)].Get<Taken>().value = SignType.Cross;
 
-            var chainLenght = cells.GameLongestChain(new Vector2Int(0, 0));
+            var chainLength = cells.GetLongestChain(new Vector2Int(1, 1));
 
-            Assert.AreEqual(3, chainLenght);
+            Assert.AreEqual(3, chainLength);
         }
 
         private static EcsEntity CreateCell(EcsWorld world, Vector2Int postion)

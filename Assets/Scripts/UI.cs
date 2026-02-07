@@ -6,5 +6,6 @@ namespace TicToe
     {
         public WinScreen winScreen;
         public LoseScreen loseScreen;
+        public GameHUD gameHUD;
     }
 }

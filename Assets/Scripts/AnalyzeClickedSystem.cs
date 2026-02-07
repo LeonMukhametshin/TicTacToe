@@ -6,6 +6,7 @@ namespace TicToe
     {
         private EcsFilter<Cell, Clicked>.Exclude<Taken> m_filter;
         private GameState m_gameState;
+        private SceneData m_sceneData;
 
         public void Run()
         {
@@ -19,6 +20,8 @@ namespace TicToe
                 m_gameState.currentType = m_gameState.currentType == SignType.Cross
                     ? SignType.Ring
                     : SignType.Cross;
+
+                m_sceneData.ui.gameHUD.SetTurn(m_gameState.currentType);
             }
         }
     }

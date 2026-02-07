@@ -15,7 +15,7 @@ namespace TicToe
                 ref var position = ref m_filter.Get1(index);
                 ref var type = ref m_filter.Get2(index);
 
-                var chainLenght = m_gameState.cells.GameLongestChain(position.value);
+                var chainLenght = m_gameState.cells.GetLongestChain(position.value);
                 if(chainLenght >= m_configuration.chainLenght)
                 {
                     m_filter.GetEntity(index).Get<Winner>();
