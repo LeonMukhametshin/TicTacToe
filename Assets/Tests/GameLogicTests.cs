@@ -207,8 +207,8 @@ namespace Tests
                 {new Vector2Int(2, 2), CreateCell(world, new Vector2Int(2,2))}
             };
 
-            cells[new Vector2Int(0, 0)].Get<Taken>().value = SignType.Cross;
-            cells[new Vector2Int(1, 0)].Get<Taken>().value = SignType.Cross;
+            cells[new Vector2Int(0, 2)].Get<Taken>().value = SignType.Cross;
+            cells[new Vector2Int(1, 1)].Get<Taken>().value = SignType.Cross;
             cells[new Vector2Int(2, 0)].Get<Taken>().value = SignType.Cross;
 
             var chainLenght = cells.GameLongestChain(new Vector2Int(0, 0));

@@ -4,7 +4,8 @@ namespace TicToe
 {
     public class SceneData : MonoBehaviour
     {
-        [SerializeField] public Transform cameraTransfrom;
-        [SerializeField] public Camera Camera;
+        public Transform cameraTransfrom;
+        public Camera Camera;
+        public UI ui;
     }
 }
