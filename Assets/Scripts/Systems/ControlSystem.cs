@@ -10,7 +10,13 @@ namespace TicToe.Systems
 
         public void Run()
         {
-            if(Input.GetMouseButtonDown(0))
+            if (m_sceneData.ui.winScreen.gameObject.activeInHierarchy ||
+                m_sceneData.ui.loseScreen.gameObject.activeInHierarchy)
+            {
+                return;
+            }
+
+            if (Input.GetMouseButtonDown(0))
             {
                 var camera = m_sceneData.Camera;
                 var ray = camera.ScreenPointToRay(Input.mousePosition);
