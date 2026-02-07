@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using TicToe.Components;
 
@@ -22,5 +23,9 @@ namespace TicToe.UnityComponents
                     throw new ArgumentOutOfRangeException(nameof(gameStateCurrentType), gameStateCurrentType, null);
             }
         }
+
+
+        public void OnCloseGameClicked() =>
+            Application.Quit();
     }
 }
