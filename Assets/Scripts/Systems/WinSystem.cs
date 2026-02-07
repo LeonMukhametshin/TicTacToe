@@ -21,6 +21,7 @@ namespace TicToe.Systems
                 ref var winnerType = ref m_filter.Get2(index);
 
                 m_sceneData.ui.winScreen.Show(true);
+                m_sceneData.ui.gameHUD.Show(false);
                 m_sceneData.ui.winScreen.SetWinner(winnerType.value);
 
                 m_filter.GetEntity(index).Get<Winner>();

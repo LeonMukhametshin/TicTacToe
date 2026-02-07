@@ -14,6 +14,7 @@ namespace TicToe.Systems
         {
             if(m_freeCells.IsEmpty() && m_winner.IsEmpty())
             {
+                m_sceneData.ui.gameHUD.Show(false);
                 m_sceneData.ui.loseScreen.Show(true);
             }
         }

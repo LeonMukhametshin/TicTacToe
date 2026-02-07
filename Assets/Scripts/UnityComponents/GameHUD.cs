@@ -1,11 +1,10 @@
 ﻿using System;
-using UnityEngine;
 using UnityEngine.UI;
 using TicToe.Components;
 
 namespace TicToe.UnityComponents
 {
-    public class GameHUD : MonoBehaviour
+    public class GameHUD : Screen
     {
         public Text text;
 
