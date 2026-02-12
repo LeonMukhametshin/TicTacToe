@@ -350,7 +350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 267316575}
-  - component: {fileID: 267316574}
+  - component: {fileID: 267316576}
   m_Layer: 0
   m_Name: SceneData
   m_TagString: Untagged
@@ -358,21 +358,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &267316574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267316573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f859997cab02642a812efe534616d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraTransfrom: {fileID: 519420032}
-  Camera: {fileID: 519420031}
-  ui: {fileID: 1419077288}
 --- !u!4 &267316575
 Transform:
   m_ObjectHideFlags: 0
@@ -388,6 +373,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &267316576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267316573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db755610e358dc7448ecd7a6f44197a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransfrom: {fileID: 519420032}
+  Camera: {fileID: 519420031}
+  ui: {fileID: 1419077288}
 --- !u!1 &334532133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   configuration: {fileID: 11400000, guid: e6b821145e48da9459ee8d7f7ef4b56d, type: 2}
   animationConfiguration: {fileID: 11400000, guid: 7d6bb685d7435c54195786f690f6da44, type: 2}
-  sceneData: {fileID: 267316574}
+  sceneData: {fileID: 267316576}
 --- !u!4 &1220287771
 Transform:
   m_ObjectHideFlags: 0
@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1419077283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25aa96a26017aed4eaef4dddc821ae2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 484f6d318be077946b751e5df834fc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   winScreen: {fileID: 334532135}

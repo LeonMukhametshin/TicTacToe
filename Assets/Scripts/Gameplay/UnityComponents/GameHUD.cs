@@ -17,8 +17,14 @@ namespace TicToe.UnityComponents
                 case SignType.Cross:
                     singText.text = "Ходит крестик";
                     break;
-                case SignType.Ring:
+                case SignType.Square:
                     singText.text = "Ходит нолик";
+                    break;
+                case SignType.Triangle:
+                    singText.text = "Ходит треугольник";
+                    break;
+                case SignType.Star:
+                    singText.text = "Ходит звезда";
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(gameStateCurrentType), gameStateCurrentType, null);

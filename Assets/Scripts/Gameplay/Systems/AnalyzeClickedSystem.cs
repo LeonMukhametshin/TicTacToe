@@ -20,9 +20,11 @@ namespace TicToe.Systems
                 ecsEntity.Get<Taken>().value = m_gameState.currentType;
                 ecsEntity.Get<CheckWinEvent>();
 
-                m_gameState.currentType = m_gameState.currentType == SignType.Cross
-                    ? SignType.Ring
-                    : SignType.Cross;
+                int indexNewSign = (int)m_gameState.currentType + 1;
+
+                m_gameState.currentType = indexNewSign < GameData.instance.playerCount
+                    ? (SignType)indexNewSign
+                    : (SignType)0;
 
                 m_sceneData.ui.gameHUD.SetTurn(m_gameState.currentType);
             }

@@ -19,6 +19,7 @@ namespace TicToe.UnityComponents
         {
             m_world = new EcsWorld();
             m_systems = new EcsSystems(m_world);
+
 #if UNITY_EDITOR
             Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(m_world);
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(m_systems);

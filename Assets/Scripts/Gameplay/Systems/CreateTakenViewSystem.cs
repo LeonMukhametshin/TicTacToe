@@ -20,15 +20,20 @@ namespace TicToe.Systems
                 var takenType = m_filter.Get1(index).value;
 
                 SignView signView = null;
+
                 switch (takenType)
                 {
                     case SignType.Cross:
-                        signView = m_configuration.crossView;
+                        signView = m_configuration.circleView;
                         break;
-                    case SignType.Ring:
-                        signView = m_configuration.righView;
+                    case SignType.Square:
+                        signView = m_configuration.squareView;
                         break;
-                    case SignType.None:
+                    case SignType.Triangle:
+                        signView = m_configuration.triangleView;
+                        break;
+                    case SignType.Star:
+                        signView = m_configuration.starView;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();

@@ -1,36 +1,46 @@
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace TicToe {
-    sealed class EscSpartupMainMenu : MonoBehaviour {
+namespace TicToe 
+{
+    sealed class EscSpartupMainMenu : MonoBehaviour 
+    {
         private EcsWorld m_world;
         private EcsSystems m_systems;
 
         public MainMenuUI mainMenuUI;
 
-        private void Start () {
+        private void Start () 
+        {
+            m_world = new EcsWorld();
+            m_systems = new EcsSystems(m_world);
 
-            m_world = new EcsWorld ();
-            m_systems = new EcsSystems (m_world);
 #if UNITY_EDITOR
-            Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create (m_world);
-            Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create (m_systems);
+            Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(m_world);
+            Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(m_systems);
 #endif
             m_systems
-                .Add(new InitializeSliderSystem())
+                .Add(new InitializeSliderEventSystem())
+                .Add(new SliderEventHadlerEvent())
+
                 .Inject(mainMenuUI)
+                .Inject(m_world)
+
                 .Init();
         }
 
-        private void Update () {
-            m_systems?.Run ();
+        private void Update() 
+        {
+            m_systems?.Run();
         }
 
-        private void OnDestroy () {
-            if (m_systems != null) {
-                m_systems.Destroy ();
+        private void OnDestroy() 
+        {
+            if (m_systems != null) 
+            {
+                m_systems.Destroy();
                 m_systems = null;
-                m_world.Destroy ();
+                m_world.Destroy();
                 m_world = null;
             }
         }

@@ -7,7 +7,7 @@ namespace TicToe.Services
 {
     public class GameState
     {
-        public SignType currentType = SignType.Ring;
+        public SignType currentType = SignType.Square;
         public Dictionary<Vector2Int, EcsEntity> cells = new();
     }
 }

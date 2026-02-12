@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class MainMenuUI : MonoBehaviour
     public void SetPlayerCountText(int count) =>
         playerCountText.text = count.ToString();
 
-    public int SlidetValue() =>
+    public int GetSliderValue() =>
         (int)slider.value;
+
+    public void OnPlayButtonClicked() =>
+        SceneManager.LoadScene(SceneNames.GAMEPLAY);
 }

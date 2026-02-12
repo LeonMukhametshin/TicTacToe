@@ -14,11 +14,9 @@ namespace TicToe.UnityComponents
         [field: SerializeField] public CellView cellView { get; private set; }
         [field: SerializeField] public Vector2 offset { get; private set; }
 
-        [field: SerializeField] public SignView crossView { get; private set; }
-        [field: SerializeField] public SignView righView { get; private set; }
+        [field: SerializeField] public SignView circleView { get; private set; }
+        [field: SerializeField] public SignView squareView { get; private set; }
+        [field: SerializeField] public SignView triangleView { get; private set; }
+        [field: SerializeField] public SignView starView { get; private set; }
     }
-}
-
-namespace TicToe.UnityComponents
-{
 }
