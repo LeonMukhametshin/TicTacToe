@@ -50,4 +50,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnPlayButtonClicked() =>
         SceneManager.LoadScene(SceneNames.GAMEPLAY);
+
+    public void OnCloseGameClicked() =>
+        Application.Quit();
 }

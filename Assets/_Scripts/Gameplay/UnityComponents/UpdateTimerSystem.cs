@@ -1,8 +1,6 @@
-﻿using Codice.Client.BaseCommands;
-using Leopotam.Ecs;
+﻿using Leopotam.Ecs;
 using TicToe.Components;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace TicToe.UnityComponents
 {
