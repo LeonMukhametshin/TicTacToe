@@ -1021,6 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   configuration: {fileID: 11400000, guid: e6b821145e48da9459ee8d7f7ef4b56d, type: 2}
+  animationConfiguration: {fileID: 11400000, guid: 7d6bb685d7435c54195786f690f6da44, type: 2}
   sceneData: {fileID: 267316574}
 --- !u!4 &1220287771
 Transform:

@@ -16,3 +16,7 @@ namespace TicToe.UnityComponents
         [field: SerializeField] public SignView righView { get; private set; }
     }
 }
+
+namespace TicToe.UnityComponents
+{
+}

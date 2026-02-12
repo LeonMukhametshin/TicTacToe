@@ -12,6 +12,7 @@ namespace TicToe.UnityComponents
         private EcsSystems m_systems;
 
         public Configuration configuration;
+        public AnimationConfiguration animationConfiguration;
         public SceneData sceneData;
 
         private void Start() 
@@ -33,6 +34,7 @@ namespace TicToe.UnityComponents
                 .Add(new ControlSystem())
                 .Add(new AnalyzeClickedSystem())
                 .Add(new CreateTakenViewSystem())
+                .Add(new PlaySpawnAnimationSystem())
                 .Add(new CheckWinSystem())
                 .Add(new WinSystem())
                 .Add(new DrawSystem())
@@ -42,6 +44,7 @@ namespace TicToe.UnityComponents
                 .OneFrame<CheckWinEvent>()
 
                 .Inject(configuration)
+                .Inject(animationConfiguration)
                 .Inject(sceneData)
                 .Inject(gameState)
 

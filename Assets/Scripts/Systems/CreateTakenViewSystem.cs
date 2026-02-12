@@ -15,7 +15,8 @@ namespace TicToe.Systems
         {
             foreach(var index in m_filter)
             {
-                var position = m_filter.Get2(index).value.transform.position;
+                var cellTransfrom = m_filter.Get2(index).value.transform;
+                var position = cellTransfrom.position + cellTransfrom.localScale / 2f;
                 var takenType = m_filter.Get1(index).value;
 
                 SignView signView = null;
@@ -34,7 +35,9 @@ namespace TicToe.Systems
                 }
 
                 var instantice = UnityEngine.Object.Instantiate(signView, position, Quaternion.identity);
-                m_filter.GetEntity(index).Get<TakenRef>().value = instantice;
+                var entity = m_filter.GetEntity(index);
+                entity.Get<TakenRef>().value = instantice;
+                entity.Get<SpawnAnimationPending>();
             }
         }
     }
