@@ -34,7 +34,7 @@ namespace TicToe.Systems
                         cellView.entity.Get<SignData>() = m_gameState.currentSing;
                     }
 
-                    m_filter.Get1(0).value = m_configuration.timeToMove;
+                    m_filter.Get1(0).value = GameData.instance.timeToMove;
                 }
             }
         }

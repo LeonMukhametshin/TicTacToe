@@ -19,7 +19,7 @@ namespace TicToe.Systems
             {
                 ref var ecsEntity = ref m_filter.GetEntity(index);
 
-                ecsEntity.Get<Taken>().id = m_gameState.currentSing.id;
+                ecsEntity.Get<Taken>().data = m_gameState.currentSing;
                 ecsEntity.Get<CheckWinEvent>();
 
                 int indexNewSign = Convert.ToInt32(m_gameState.currentSing.id) + 1;

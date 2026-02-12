@@ -15,7 +15,7 @@ namespace TicToe.Services
                 return 0;
             }
 
-            var startID = startEntity.Get<Taken>().id;
+            var startID = startEntity.Get<Taken>().data.id;
 
             var horizontalLength = Count(cells, position, new Vector2Int(1, 0), startID, 1, new Vector2Int(-1, 0));
             var verticalLength = Count(cells, position, new Vector2Int(0, 1), startID, 1, new Vector2Int(0, -1));
@@ -42,7 +42,7 @@ namespace TicToe.Services
                 }
                 else
                 {
-                    var type = entity.Get<Taken>().id;
+                    var type = entity.Get<Taken>().data.id;
                     if (type != id)
                     {
                         break;
@@ -61,7 +61,7 @@ namespace TicToe.Services
                     break;
                 }
 
-                var type = entity.Get<Taken>().id;
+                var type = entity.Get<Taken>().data.id;
                 if (type != id)
                 {
                     break;

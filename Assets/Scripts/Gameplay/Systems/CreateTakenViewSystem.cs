@@ -16,7 +16,7 @@ namespace TicToe.Systems
             {
                 var cellTransfrom = m_filter.Get2(index).value.transform;
                 var position = cellTransfrom.position + cellTransfrom.localScale / 2f;
-                var takenID = m_filter.Get1(index).id;
+                var takenID = m_filter.Get1(index).data.id;
 
                 SignView signView = m_configuration.signViews.GetSign(takenID);
 

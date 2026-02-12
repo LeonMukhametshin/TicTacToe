@@ -5,16 +5,30 @@ namespace TicToe
     internal class GameData : MonoBehaviour
     {
         public static GameData instance;
-        private int m_plyaerCount;
+
+        private int m_playerCount;
+        private int m_timeToMove;
 
         public int playerCount
         {
-            get => m_plyaerCount;
+            get => m_playerCount;
             private set
             {
-                if(value != m_plyaerCount)
+                if(value != m_playerCount)
                 {
-                    m_plyaerCount = value;
+                    m_playerCount = value;
+                }
+            }
+        }
+
+        public int timeToMove
+        {
+            get => m_timeToMove;
+            private set
+            {
+                if(value != m_timeToMove)
+                {
+                    m_timeToMove = value;
                 }
             }
         }
@@ -34,5 +48,8 @@ namespace TicToe
 
         public void SetPlayerCount(int count) =>
             playerCount = count;
+
+        public void SetTimeToMove(int time) =>
+            timeToMove = time;
     }
 }

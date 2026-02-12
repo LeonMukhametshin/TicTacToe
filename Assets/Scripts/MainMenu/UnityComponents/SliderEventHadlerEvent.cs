@@ -11,8 +11,11 @@ namespace TicToe
         {
             foreach(var index in m_filter)
             {
-                m_mainMenuUI.SetPlayerCountText(m_mainMenuUI.GetSliderValue());
-                GameData.instance.SetPlayerCount(m_mainMenuUI.GetSliderValue());
+                m_mainMenuUI.playerCountSlider.SetText(m_mainMenuUI.playerCountSlider.GetSiderValue());
+                m_mainMenuUI.timeToMoveSlider.SetText(m_mainMenuUI.timeToMoveSlider.GetSiderValue());
+
+                GameData.instance.SetPlayerCount(m_mainMenuUI.playerCountSlider.GetSiderValue());
+                GameData.instance.SetTimeToMove(m_mainMenuUI.timeToMoveSlider.GetSiderValue());
             }
         }
     }
