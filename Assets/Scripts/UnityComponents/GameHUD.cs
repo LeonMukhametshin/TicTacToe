@@ -7,23 +7,26 @@ namespace TicToe.UnityComponents
 {
     public class GameHUD : Screen
     {
-        public Text text;
+        public Text singText;
+        public Text timerText;
 
         public void SetTurn(SignType gameStateCurrentType)
         {
             switch (gameStateCurrentType)
             {
                 case SignType.Cross:
-                    text.text = "Ходит крестик";
+                    singText.text = "Ходит крестик";
                     break;
                 case SignType.Ring:
-                    text.text = "Ходит нолик";
+                    singText.text = "Ходит нолик";
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(gameStateCurrentType), gameStateCurrentType, null);
             }
         }
 
+        public void UpdateTextTimer(float time) =>
+            timerText.text = Math.Round(time, 2).ToString();
 
         public void OnCloseGameClicked() =>
             Application.Quit();

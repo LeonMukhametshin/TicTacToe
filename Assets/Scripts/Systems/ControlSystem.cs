@@ -1,12 +1,15 @@
 using UnityEngine;
 using Leopotam.Ecs;
 using TicToe.UnityComponents;
+using TicToe.Components;
 
 namespace TicToe.Systems
 { 
     public class ControlSystem : IEcsRunSystem
     {
+        private EcsFilter<Timer> m_filter;
         private SceneData m_sceneData;
+        private Configuration m_configuration;
 
         public void Run()
         {
@@ -27,6 +30,8 @@ namespace TicToe.Systems
                     {
                         cellView.entity.Get<Clicked>();
                     }
+
+                    m_filter.Get1(0).value = m_configuration.timeToMove;
                 }
             }
         }

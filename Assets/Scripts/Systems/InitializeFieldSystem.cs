@@ -7,7 +7,7 @@ using TicToe.UnityComponents;
 
 namespace TicToe.Systems
 { 
-    public class InitializeFieldSystems : IEcsInitSystem
+    public class InitializeFieldSystem : IEcsInitSystem
     {
         private Configuration m_configuration;
         private EcsWorld m_world;

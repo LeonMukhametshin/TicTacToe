@@ -28,10 +28,14 @@ namespace TicToe.UnityComponents
 
             m_systems
 
-                .Add(new InitializeFieldSystems())
+                .Add(new InitializeFieldSystem())
+                .Add(new InitializerTimerSystem())
                 .Add(new CreateCellViewSystem())
                 .Add(new SetCameraSystem())
                 .Add(new ControlSystem())
+                .Add(new UpdateTimerSystem())
+                .Add(new TimerFinishHandlerSystem())
+                .Add(new UpdateTimerViewSystem())
                 .Add(new AnalyzeClickedSystem())
                 .Add(new CreateTakenViewSystem())
                 .Add(new PlaySpawnAnimationSystem())
