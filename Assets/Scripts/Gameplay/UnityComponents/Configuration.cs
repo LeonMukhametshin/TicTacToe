@@ -15,7 +15,7 @@ namespace TicToe.UnityComponents
         [field: SerializeField] public CellView cellView { get; private set; }
         [field: SerializeField] public Vector2 offset { get; private set; }
 
-        [SerializeField] public SignView[] signViews;
+        [SerializeField] private SignView[] signViews;
 
         public IReadOnlyList<SignView> readOnlySignList => signViews;
 

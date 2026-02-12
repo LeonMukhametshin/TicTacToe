@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace TicToe
 {
@@ -46,10 +47,26 @@ namespace TicToe
             }
         }
 
-        public void SetPlayerCount(int count) =>
-            playerCount = count;
+        public void SetPlayerCount(int count)
+        {
+            if (count <= 1)
+            {
+                throw new ArgumentException("Count can`t be one or less");
+            }
 
-        public void SetTimeToMove(int time) =>
+            playerCount = count;
+        }
+           
+
+        public void SetTimeToMove(int time)
+        {
+            if(time <= 0)
+            {
+                throw new ArgumentException("Time can`t be negative or zero");
+            }
+
             timeToMove = time;
+        }
+            
     }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   <levelWidth>k__BackingField: 5
   <levelHeight>k__BackingField: 5
   <chainLenght>k__BackingField: 3
-  <timeToMove>k__BackingField: 100
+  <timeToMove>k__BackingField: 2
   <cellView>k__BackingField: {fileID: 7080422322970506878, guid: 6c9b418c65d98de479872f4685907bc1, type: 3}
   <offset>k__BackingField: {x: 0.1, y: 0.1}
   signViews:

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TicToe 
 {
-    sealed class EscSpartupMainMenu : MonoBehaviour 
+    sealed class MainMenuEcsStartup : MonoBehaviour 
     {
         private EcsWorld m_world;
         private EcsSystems m_systems;
@@ -20,11 +20,12 @@ namespace TicToe
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(m_systems);
 #endif
             m_systems
-                .Add(new InitializeSliderEventSystem())
-                .Add(new SliderEventHadlerEvent())
+                .Add(new UpdateGameSettingsSystem())
+                
+                .OneFrame<PlayerCountChangedEvent>()
+                .OneFrame<TimeToMoveChangedEvent>()
 
                 .Inject(mainMenuUI)
-                .Inject(m_world)
 
                 .Init();
         }

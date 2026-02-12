@@ -26,7 +26,7 @@ namespace TicToe.UnityComponents
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(m_systems);
 #endif
             var gameState = new GameState();
-            sceneData.ui.gameHUD.SetTurn(gameState.currentSing.name);
+            sceneData.ui.gameHUD.SetTurn(gameState.currentSign.name);
 
             m_systems
 
@@ -34,7 +34,7 @@ namespace TicToe.UnityComponents
                 .Add(new InitializerTimerSystem())
                 .Add(new CreateCellViewSystem())
                 .Add(new SetCameraSystem())
-                .Add(new ControlSystem())
+                .Add(new HandleCellClickInputSystem())
                 .Add(new UpdateTimerSystem())
                 .Add(new TimerFinishHandlerSystem())
                 .Add(new UpdateTimerViewSystem())

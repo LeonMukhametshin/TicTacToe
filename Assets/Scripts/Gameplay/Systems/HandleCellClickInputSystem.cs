@@ -6,7 +6,7 @@ using TicToe.Services;
 
 namespace TicToe.Systems
 { 
-    public class ControlSystem : IEcsRunSystem
+    public class HandleCellClickInputSystem : IEcsRunSystem
     {
         private EcsFilter<Timer> m_filter;
         private GameplaySceneData m_sceneData;
@@ -31,7 +31,7 @@ namespace TicToe.Systems
                     if(cellView)
                     {
                         cellView.entity.Get<Clicked>();
-                        cellView.entity.Get<SignData>() = m_gameState.currentSing;
+                        cellView.entity.Get<SignData>() = m_gameState.currentSign;
                     }
 
                     m_filter.Get1(0).value = GameData.instance.timeToMove;

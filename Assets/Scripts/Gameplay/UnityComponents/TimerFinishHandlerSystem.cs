@@ -22,15 +22,13 @@ namespace TicToe.UnityComponents
                 var winner = m_world.NewEntity();
                 winner.Get<Winner>();
 
-                int previousSingIndex = Convert.ToInt32(m_gameState.currentSing.id) - 1;
+                int previousSignIndex = Convert.ToInt32(m_gameState.currentSign.id) - 1;
 
-                if (previousSingIndex < 0)
+                if (previousSignIndex < 0)
                 {
-                    previousSingIndex = GameData.instance.playerCount - 1;
+                    previousSignIndex = GameData.instance.playerCount - 1;
                 }
-
-                winner.Get<Taken>().data = m_configuration.readOnlySignList.GetSign(previousSingIndex.ToString()).signData;
-
+                winner.Get<Taken>().data = m_configuration.readOnlySignList.GetSign(previousSignIndex.ToString()).signData;
                 entity.Del<TimerFinishEvent>();
             }
         }

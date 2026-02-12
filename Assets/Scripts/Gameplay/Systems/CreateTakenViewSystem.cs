@@ -18,7 +18,7 @@ namespace TicToe.Systems
                 var position = cellTransfrom.position + cellTransfrom.localScale / 2f;
                 var takenID = m_filter.Get1(index).data.id;
 
-                SignView signView = m_configuration.signViews.GetSign(takenID);
+                SignView signView = m_configuration.readOnlySignList.GetSign(takenID);
 
                 var instantice = UnityEngine.Object.Instantiate(signView, position, Quaternion.identity);
                 var entity = m_filter.GetEntity(index);
