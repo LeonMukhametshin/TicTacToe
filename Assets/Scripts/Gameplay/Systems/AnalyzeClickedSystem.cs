@@ -9,7 +9,7 @@ namespace TicToe.Systems
     {
         private EcsFilter<Cell, Clicked>.Exclude<Taken> m_filter;
         private GameState m_gameState;
-        private SceneData m_sceneData;
+        private GameplaySceneData m_sceneData;
 
         public void Run()
         {

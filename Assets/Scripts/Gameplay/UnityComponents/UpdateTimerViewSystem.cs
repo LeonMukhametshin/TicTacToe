@@ -6,7 +6,7 @@ namespace TicToe.UnityComponents
     internal class UpdateTimerViewSystem : IEcsRunSystem
     {
         private EcsFilter<Timer> m_filter;
-        private SceneData m_sceneData;
+        private GameplaySceneData m_sceneData;
 
         public void Run()
         {

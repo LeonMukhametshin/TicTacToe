@@ -2,7 +2,7 @@
 
 namespace TicToe.UnityComponents
 {
-    public class UI : MonoBehaviour
+    public class GameplayUI : MonoBehaviour
     {
         public WinScreen winScreen;
         public LoseScreen loseScreen;

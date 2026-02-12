@@ -8,7 +8,7 @@ namespace TicToe.Systems
     public class ControlSystem : IEcsRunSystem
     {
         private EcsFilter<Timer> m_filter;
-        private SceneData m_sceneData;
+        private GameplaySceneData m_sceneData;
         private Configuration m_configuration;
 
         public void Run()

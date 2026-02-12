@@ -2,10 +2,10 @@
 
 namespace TicToe.UnityComponents
 {
-    public class SceneData : MonoBehaviour
+    public class GameplaySceneData : MonoBehaviour
     {
         public Transform cameraTransfrom;
         public Camera Camera;
-        public UI ui;
+        public GameplayUI ui;
     }
 }

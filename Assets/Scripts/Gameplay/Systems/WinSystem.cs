@@ -7,7 +7,7 @@ namespace TicToe.Systems
     public class WinSystem : IEcsRunSystem
     {
         private EcsFilter<Winner, Taken> m_filter;
-        private SceneData m_sceneData;
+        private GameplaySceneData m_sceneData;
 
         public void Run()
         {

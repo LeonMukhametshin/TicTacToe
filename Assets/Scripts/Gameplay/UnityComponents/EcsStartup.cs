@@ -13,7 +13,7 @@ namespace TicToe.UnityComponents
 
         public Configuration configuration;
         public AnimationConfiguration animationConfiguration;
-        public SceneData sceneData;
+        public GameplaySceneData sceneData;
 
         private void Start() 
         {
