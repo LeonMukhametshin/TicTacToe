@@ -7,33 +7,15 @@ namespace TicToe
     {
         public static GameData instance;
 
+        public int playerCount => m_playerCount;
+
+        public int timeToMove => m_timeToMove;
+
+
         private int m_playerCount;
         private int m_timeToMove;
 
-        public int playerCount
-        {
-            get => m_playerCount;
-            private set
-            {
-                if(value != m_playerCount)
-                {
-                    m_playerCount = value;
-                }
-            }
-        }
-
-        public int timeToMove
-        {
-            get => m_timeToMove;
-            private set
-            {
-                if(value != m_timeToMove)
-                {
-                    m_timeToMove = value;
-                }
-            }
-        }
-
+      
         private void Awake()
         {
             if (instance == null)
@@ -54,7 +36,7 @@ namespace TicToe
                 throw new ArgumentException("Count can`t be one or less");
             }
 
-            playerCount = count;
+            m_playerCount = count;
         }
            
 
@@ -65,8 +47,7 @@ namespace TicToe
                 throw new ArgumentException("Time can`t be negative or zero");
             }
 
-            timeToMove = time;
+            m_timeToMove = time;
         }
-            
     }
 }

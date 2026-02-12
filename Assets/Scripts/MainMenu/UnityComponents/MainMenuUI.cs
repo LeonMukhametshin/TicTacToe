@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using Leopotam.Ecs;
 using UnityEngine.SceneManagement;
+using TicToe;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
-        m_world = new EcsWorld();
+        m_world = MainMenuEcsStartup.world;
 
         m_playerCountSlider.onValueChanged.AddListener(OnPlayerCountChanged);
         m_playerCountSlider.onValueChanged.AddListener(PlayerCountTextUpdate);
@@ -36,10 +37,10 @@ public class MainMenuUI : MonoBehaviour
         entity.Get<TimeToMoveChangedEvent>().value = (int)value;
     }
 
-    public void PlayerCountTextUpdate(float text) =>
+    private void PlayerCountTextUpdate(float text) =>
          m_playerCountText.text = ((int)text).ToString();
 
-    public void TimeToMoveTextUpdate(float text) =>
+    private void TimeToMoveTextUpdate(float text) =>
         m_timeToMoveText.text = ((int)text).ToString();
 
     public void OnPlayButtonClicked() =>
