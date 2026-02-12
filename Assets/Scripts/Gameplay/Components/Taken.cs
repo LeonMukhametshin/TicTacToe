@@ -2,6 +2,6 @@
 {
     public struct Taken
     {
-        public SignType value;
+        public string id;
     }
 }

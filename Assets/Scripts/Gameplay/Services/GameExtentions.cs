@@ -15,12 +15,12 @@ namespace TicToe.Services
                 return 0;
             }
 
-            var startType = startEntity.Get<Taken>().value;
+            var startID = startEntity.Get<Taken>().id;
 
-            var horizontalLength = Count(cells, position, new Vector2Int(1, 0), startType, 1, new Vector2Int(-1, 0));
-            var verticalLength = Count(cells, position, new Vector2Int(0, 1), startType, 1, new Vector2Int(0, -1));
-            var diagonalOne = Count(cells, position, new Vector2Int(-1, -1), startType, 1, new Vector2Int(1, 1));
-            var diagonalOther = Count(cells, position, new Vector2Int(-1, 1), startType, 1, new Vector2Int(1, -1));
+            var horizontalLength = Count(cells, position, new Vector2Int(1, 0), startID, 1, new Vector2Int(-1, 0));
+            var verticalLength = Count(cells, position, new Vector2Int(0, 1), startID, 1, new Vector2Int(0, -1));
+            var diagonalOne = Count(cells, position, new Vector2Int(-1, -1), startID, 1, new Vector2Int(1, 1));
+            var diagonalOther = Count(cells, position, new Vector2Int(-1, 1), startID, 1, new Vector2Int(1, -1));
 
             return Mathf.Max(verticalLength, horizontalLength, diagonalOne, diagonalOther);
         }
@@ -28,7 +28,7 @@ namespace TicToe.Services
         private static int Count(Dictionary<Vector2Int, EcsEntity> cells, 
             Vector2Int position, 
             Vector2Int direction, 
-            SignType startType,
+            string id,
             int diagonalOne, 
             Vector2Int direction2)
         {
@@ -42,8 +42,8 @@ namespace TicToe.Services
                 }
                 else
                 {
-                    var type = entity.Get<Taken>().value;
-                    if (type != startType)
+                    var type = entity.Get<Taken>().id;
+                    if (type != id)
                     {
                         break;
                     }
@@ -61,8 +61,8 @@ namespace TicToe.Services
                     break;
                 }
 
-                var type = entity.Get<Taken>().value;
-                if (type != startType)
+                var type = entity.Get<Taken>().id;
+                if (type != id)
                 {
                     break;
                 }

@@ -16,7 +16,6 @@ namespace TicToe.UnityComponents
                 var entity = m_filter.GetEntity(index);
 
                 timer.value -= Time.deltaTime;
-                Debug.Log(timer.value);
 
                 if(timer.value <= 0)
                 {

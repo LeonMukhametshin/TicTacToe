@@ -6,7 +6,7 @@ namespace TicToe.Systems
 {
     public class WinSystem : IEcsRunSystem
     {
-        private EcsFilter<Winner, Taken> m_filter;
+        private EcsFilter<Winner, Taken, SignData> m_filter;
         private GameplaySceneData m_sceneData;
 
         public void Run()
@@ -18,11 +18,9 @@ namespace TicToe.Systems
 
             foreach(var index in m_filter)
             {
-                ref var winnerType = ref m_filter.Get2(index);
-
                 m_sceneData.ui.winScreen.Show(true);
                 m_sceneData.ui.gameHUD.Show(false);
-                m_sceneData.ui.winScreen.SetWinner(winnerType.value);
+                m_sceneData.ui.winScreen.SetWinner(m_filter.Get3(index).name);
 
                 m_filter.GetEntity(index).Get<Winner>();
             }

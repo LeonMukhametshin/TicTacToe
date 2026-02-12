@@ -2,6 +2,7 @@ using UnityEngine;
 using Leopotam.Ecs;
 using TicToe.UnityComponents;
 using TicToe.Components;
+using TicToe.Services;
 
 namespace TicToe.Systems
 { 
@@ -10,6 +11,7 @@ namespace TicToe.Systems
         private EcsFilter<Timer> m_filter;
         private GameplaySceneData m_sceneData;
         private Configuration m_configuration;
+        private GameState m_gameState;
 
         public void Run()
         {
@@ -29,6 +31,7 @@ namespace TicToe.Systems
                     if(cellView)
                     {
                         cellView.entity.Get<Clicked>();
+                        cellView.entity.Get<SignData>() = m_gameState.currentSing;
                     }
 
                     m_filter.Get1(0).value = m_configuration.timeToMove;

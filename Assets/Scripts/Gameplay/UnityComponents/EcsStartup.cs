@@ -1,4 +1,5 @@
 using Leopotam.Ecs;
+using System.Linq;
 using TicToe.Components;
 using TicToe.Services;
 using TicToe.Systems;
@@ -25,7 +26,7 @@ namespace TicToe.UnityComponents
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(m_systems);
 #endif
             var gameState = new GameState();
-            sceneData.ui.gameHUD.SetTurn(gameState.currentType);
+            sceneData.ui.gameHUD.SetTurn(gameState.currentSing.name);
 
             m_systems
 

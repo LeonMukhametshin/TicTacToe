@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TicToe.UnityComponents
@@ -14,9 +15,9 @@ namespace TicToe.UnityComponents
         [field: SerializeField] public CellView cellView { get; private set; }
         [field: SerializeField] public Vector2 offset { get; private set; }
 
-        [field: SerializeField] public SignView circleView { get; private set; }
-        [field: SerializeField] public SignView squareView { get; private set; }
-        [field: SerializeField] public SignView triangleView { get; private set; }
-        [field: SerializeField] public SignView starView { get; private set; }
+        [SerializeField] public SignView[] signViews;
+
+        public IReadOnlyList<SignView> readOnlySignList => signViews;
+
     }
 }

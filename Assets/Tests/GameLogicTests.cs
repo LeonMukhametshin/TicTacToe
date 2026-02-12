@@ -27,7 +27,7 @@ namespace Tests
             var world = new EcsWorld();
             Dictionary<Vector2Int, EcsEntity> cells = CreateDictionary(world);
 
-            cells[Vector2Int.zero].Get<Taken>().value = SignType.Cross;
+            cells[Vector2Int.zero].Get<Taken>().id = BaseSign.fistSign.id;
 
             var chainLenght = cells.GetLongestChain(Vector2Int.zero);
 
@@ -40,8 +40,8 @@ namespace Tests
             var world = new EcsWorld();
             Dictionary<Vector2Int, EcsEntity> cells = CreateDictionary(world);
 
-            cells[new Vector2Int(2, 0)].Get<Taken>().value = SignType.Cross;
-            cells[new Vector2Int(1, 0)].Get<Taken>().value = SignType.Cross;
+            cells[new Vector2Int(2, 0)].Get<Taken>().id = BaseSign.fistSign.id;
+            cells[new Vector2Int(1, 0)].Get<Taken>().id = BaseSign.fistSign.id;
 
             var chainLenght = cells.GetLongestChain(new Vector2Int(2,0));
 
@@ -54,8 +54,8 @@ namespace Tests
             var world = new EcsWorld();
             Dictionary<Vector2Int, EcsEntity> cells = CreateDictionary(world);
 
-            cells[new Vector2Int(2, 0)].Get<Taken>().value = SignType.Cross;
-            cells[new Vector2Int(1, 0)].Get<Taken>().value = SignType.Cross;
+            cells[new Vector2Int(2, 0)].Get<Taken>().id = BaseSign.fistSign.id;
+            cells[new Vector2Int(1, 0)].Get<Taken>().id = BaseSign.fistSign.id;
 
             var chainLenght = cells.GetLongestChain(new Vector2Int(1, 0));
 
@@ -68,8 +68,8 @@ namespace Tests
             var world = new EcsWorld();
             Dictionary<Vector2Int, EcsEntity> cells = CreateDictionary(world);
 
-            cells[new Vector2Int(0, 1)].Get<Taken>().value = SignType.Cross;
-            cells[new Vector2Int(0, 2)].Get<Taken>().value = SignType.Cross;
+            cells[new Vector2Int(0, 1)].Get<Taken>().id = BaseSign.fistSign.id;
+            cells[new Vector2Int(0, 2)].Get<Taken>().id = BaseSign.fistSign.id;
 
             var chainLenght = cells.GetLongestChain(new Vector2Int(0, 1));
 
@@ -82,9 +82,9 @@ namespace Tests
             var world = new EcsWorld();
             Dictionary<Vector2Int, EcsEntity> cells = CreateDictionary(world);
 
-            cells[new Vector2Int(0, 0)].Get<Taken>().value = SignType.Cross;
-            cells[new Vector2Int(0, 1)].Get<Taken>().value = SignType.Cross;
-            cells[new Vector2Int(0, 2)].Get<Taken>().value = SignType.Cross;
+            cells[new Vector2Int(0, 0)].Get<Taken>().id = BaseSign.fistSign.id;
+            cells[new Vector2Int(0, 1)].Get<Taken>().id = BaseSign.fistSign.id;
+            cells[new Vector2Int(0, 2)].Get<Taken>().id = BaseSign.fistSign.id;
 
             var chainLenght = cells.GetLongestChain(new Vector2Int(0, 0));
 
@@ -96,10 +96,10 @@ namespace Tests
         {
             var world = new EcsWorld();
             Dictionary<Vector2Int, EcsEntity> cells = CreateDictionary(world);
-
-            cells[new Vector2Int(0, 0)].Get<Taken>().value = SignType.Cross;
-            cells[new Vector2Int(0, 1)].Get<Taken>().value = SignType.Cross;
-            cells[new Vector2Int(0, 2)].Get<Taken>().value = SignType.Cross;
+                
+            cells[new Vector2Int(0, 0)].Get<Taken>().id = BaseSign.fistSign.id;
+            cells[new Vector2Int(0, 1)].Get<Taken>().id = BaseSign.fistSign.id;
+            cells[new Vector2Int(0, 2)].Get<Taken>().id = BaseSign.fistSign.id;
 
             var chainLenght = cells.GetLongestChain(new Vector2Int(0, 0));
 
@@ -112,9 +112,9 @@ namespace Tests
             var world = new EcsWorld();
             Dictionary<Vector2Int, EcsEntity> cells = CreateDictionary(world);
 
-            cells[new Vector2Int(0, 2)].Get<Taken>().value = SignType.Cross;
-            cells[new Vector2Int(1, 1)].Get<Taken>().value = SignType.Cross;
-            cells[new Vector2Int(2, 0)].Get<Taken>().value = SignType.Cross;
+            cells[new Vector2Int(0, 2)].Get<Taken>().id = BaseSign.fistSign.id;
+            cells[new Vector2Int(1, 1)].Get<Taken>().id = BaseSign.fistSign.id;
+            cells[new Vector2Int(2, 0)].Get<Taken>().id = BaseSign.fistSign.id;
 
             var chainLength = cells.GetLongestChain(new Vector2Int(1, 1));
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using TicToe.Components;
 
 namespace TicToe.UnityComponents
 {
@@ -10,25 +9,9 @@ namespace TicToe.UnityComponents
         public Text singText;
         public Text timerText;
 
-        public void SetTurn(SignType gameStateCurrentType)
+        public void SetTurn(string currentID)
         {
-            switch (gameStateCurrentType)
-            {
-                case SignType.Cross:
-                    singText.text = "Ходит крестик";
-                    break;
-                case SignType.Square:
-                    singText.text = "Ходит нолик";
-                    break;
-                case SignType.Triangle:
-                    singText.text = "Ходит треугольник";
-                    break;
-                case SignType.Star:
-                    singText.text = "Ходит звезда";
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(gameStateCurrentType), gameStateCurrentType, null);
-            }
+            singText.text = "Ходит: " + currentID;
         }
 
         public void UpdateTextTimer(float time) =>

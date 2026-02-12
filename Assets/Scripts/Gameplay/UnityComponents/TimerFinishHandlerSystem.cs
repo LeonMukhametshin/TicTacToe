@@ -17,7 +17,7 @@ namespace TicToe.UnityComponents
                 var entity = m_filter.GetEntity(index);
                 var winner = m_world.NewEntity();
                 winner.Get<Winner>();
-                winner.Get<Taken>().value = m_gameState.currentType;
+                winner.Get<Taken>().id = m_gameState.currentSing.id;
 
                 entity.Del<TimerFinishEvent>();
             }

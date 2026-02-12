@@ -2,5 +2,8 @@
 
 namespace TicToe.UnityComponents
 {
-    public class SignView : MonoBehaviour { }
+    public class SignView : MonoBehaviour 
+    {
+        public SignData signData;
+    }
 }
