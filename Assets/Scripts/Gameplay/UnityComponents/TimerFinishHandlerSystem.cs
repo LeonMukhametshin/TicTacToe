@@ -2,7 +2,6 @@
 using System;
 using TicToe.Components;
 using TicToe.Services;
-using UnityEngine;
 
 namespace TicToe.UnityComponents
 {
@@ -17,7 +16,6 @@ namespace TicToe.UnityComponents
         {
             foreach(var index in m_filter)
             {
-                Debug.Log("TImer fineshed;");
                 var entity = m_filter.GetEntity(index);
                 var winner = m_world.NewEntity();
                 winner.Get<Winner>();

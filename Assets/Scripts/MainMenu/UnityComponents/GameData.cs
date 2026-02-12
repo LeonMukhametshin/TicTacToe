@@ -12,8 +12,8 @@ namespace TicToe
         public int timeToMove => m_timeToMove;
 
 
-        private int m_playerCount;
-        private int m_timeToMove;
+        private int m_playerCount = 2;
+        private int m_timeToMove = 1;
 
       
         private void Awake()

@@ -24,7 +24,7 @@ namespace TicToe.Systems
                 var entity = m_filter.GetEntity(index);
                 entity.Get<TakenRef>().value = instantice;
                 entity.Get<SpawnAnimationPending>();
-                entity.Get<SignData>().name = m_configuration.readOnlySignList.GetSign(takenID).name;
+                entity.Get<SignData>().name = m_configuration.readOnlySignList.GetSign(takenID).signData.name;
             }
         }
     }

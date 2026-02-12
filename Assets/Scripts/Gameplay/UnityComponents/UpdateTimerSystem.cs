@@ -1,6 +1,8 @@
-﻿using Leopotam.Ecs;
+﻿using Codice.Client.BaseCommands;
+using Leopotam.Ecs;
 using TicToe.Components;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace TicToe.UnityComponents
 {
@@ -17,7 +19,7 @@ namespace TicToe.UnityComponents
 
                 timer.value -= Time.deltaTime;
 
-                if(timer.value <= 0)
+                if (timer.value <= 0)
                 {
                     entity.Get<TimerFinishEvent>();
                     entity.Del<Timer>();

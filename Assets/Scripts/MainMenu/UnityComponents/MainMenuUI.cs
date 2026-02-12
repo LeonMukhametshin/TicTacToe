@@ -6,10 +6,12 @@ using TicToe;
 
 public class MainMenuUI : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField] private Text m_playerCountText;
-    [SerializeField] private Text m_timeToMoveText;
-
     [SerializeField] private Slider m_playerCountSlider;
+
+    [Header("Timer")]
+    [SerializeField] private Text m_timeToMoveText;
     [SerializeField] private Slider m_timeToMoveSlider;
 
     private EcsWorld m_world;
@@ -23,6 +25,9 @@ public class MainMenuUI : MonoBehaviour
       
         m_timeToMoveSlider.onValueChanged.AddListener(OnTimeToMoveChanged);
         m_timeToMoveSlider.onValueChanged.AddListener(TimeToMoveTextUpdate);
+
+        OnPlayerCountChanged(2);
+        OnTimeToMoveChanged(1);
     }
 
     private void OnPlayerCountChanged(float value)
