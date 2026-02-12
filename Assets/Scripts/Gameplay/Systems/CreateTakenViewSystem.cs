@@ -16,15 +16,15 @@ namespace TicToe.Systems
             {
                 var cellTransfrom = m_filter.Get2(index).value.transform;
                 var position = cellTransfrom.position + cellTransfrom.localScale / 2f;
-                var takenID = m_filter.Get1(index).id;
+                var takenID = m_filter.Get1(index).data.id;
 
-                SignView signView = m_configuration.signViews.GetSign(takenID);
+                SignView signView = m_configuration.readOnlySignList.GetSign(takenID);
 
                 var instantice = UnityEngine.Object.Instantiate(signView, position, Quaternion.identity);
                 var entity = m_filter.GetEntity(index);
                 entity.Get<TakenRef>().value = instantice;
                 entity.Get<SpawnAnimationPending>();
-                entity.Get<SignData>().name = m_configuration.readOnlySignList.GetSign(takenID).name;
+                entity.Get<SignData>().name = m_configuration.readOnlySignList.GetSign(takenID).signData.name;
             }
         }
     }

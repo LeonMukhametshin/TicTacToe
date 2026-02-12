@@ -19,20 +19,20 @@ namespace TicToe.Systems
             {
                 ref var ecsEntity = ref m_filter.GetEntity(index);
 
-                ecsEntity.Get<Taken>().id = m_gameState.currentSing.id;
+                ecsEntity.Get<Taken>().data = m_gameState.currentSign;
                 ecsEntity.Get<CheckWinEvent>();
 
-                int indexNewSign = Convert.ToInt32(m_gameState.currentSing.id) + 1;
+                int indexNewSign = Convert.ToInt32(m_gameState.currentSign.id) + 1;
 
                 if(indexNewSign >= GameData.instance.playerCount)
                 {
                     indexNewSign = 0;
                 }
 
-                m_gameState.currentSing = m_configuration.readOnlySignList
+                m_gameState.currentSign = m_configuration.readOnlySignList
                     .GetSign(indexNewSign.ToString()).signData;
 
-                m_sceneData.ui.gameHUD.SetTurn(m_gameState.currentSing.name);
+                m_sceneData.ui.gameHUD.SetTurn(m_gameState.currentSign.name);
             }
         }
     }

@@ -2,6 +2,6 @@
 {
     public struct Taken
     {
-        public string id;
+        public SignData data;
     }
 }

@@ -1,24 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace TicToe
 {
     internal class GameData : MonoBehaviour
     {
         public static GameData instance;
-        private int m_plyaerCount;
 
-        public int playerCount
-        {
-            get => m_plyaerCount;
-            private set
-            {
-                if(value != m_plyaerCount)
-                {
-                    m_plyaerCount = value;
-                }
-            }
-        }
+        public int playerCount => m_playerCount;
 
+        public int timeToMove => m_timeToMove;
+
+
+        private int m_playerCount = 2;
+        private int m_timeToMove = 1;
+
+      
         private void Awake()
         {
             if (instance == null)
@@ -32,7 +29,25 @@ namespace TicToe
             }
         }
 
-        public void SetPlayerCount(int count) =>
-            playerCount = count;
+        public void SetPlayerCount(int count)
+        {
+            if (count <= 1)
+            {
+                throw new ArgumentException("Count can`t be one or less");
+            }
+
+            m_playerCount = count;
+        }
+           
+
+        public void SetTimeToMove(int time)
+        {
+            if(time <= 0)
+            {
+                throw new ArgumentException("Time can`t be negative or zero");
+            }
+
+            m_timeToMove = time;
+        }
     }
 }

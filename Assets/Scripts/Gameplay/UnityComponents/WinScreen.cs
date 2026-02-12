@@ -9,10 +9,13 @@ namespace TicToe.UnityComponents
 
         public void SetWinner(string name)
         { 
-            text.text = name + " WIN!";
+            text.text = name + " ПОБЕДИЛ!";
         }
 
         public void OnRestartClicked() =>
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneNames.GAMEPLAY);
+
+        public void OnGoToMenuClicked() =>
+          SceneManager.LoadScene(SceneNames.MAIN_MENU);
     }
 }
